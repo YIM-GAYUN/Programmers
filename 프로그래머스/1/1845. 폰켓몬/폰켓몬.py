@@ -1,9 +1,9 @@
 def solution(nums):
     answer = 0
-    max_nums = len(nums) / 2
-    only = len(set(nums))
-    if max_nums >= only:
-        answer = only
+    set_nums = set(nums)
+    poss = len(nums) // 2
+    if len(set_nums) < poss:
+        answer = len(set_nums)
     else:
-        answer = max_nums
+        answer = poss
     return answer

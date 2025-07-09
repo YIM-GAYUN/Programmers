@@ -1,0 +1,5 @@
+N = int(input())
+nums = list(map(int, input().split()))
+M = max(nums)
+m = min(nums)
+print(f"{m} {M}")

@@ -1,15 +1,10 @@
 def solution(numbers, target):
-    answer = 0
+    def dfs(i, sum_):
+        if i == len(numbers):
+            if sum_ == target:
+                return 1
+            else:
+                return 0
+        return dfs(i+1, sum_ + numbers[i]) + dfs(i+1, sum_ - numbers[i])
     
-    def dfs(index, current_sum):
-        nonlocal answer
-        if index == len(numbers):
-            if current_sum == target:
-                answer += 1
-            return
-    
-        dfs(index + 1, current_sum + numbers[index])
-        dfs(index + 1, current_sum - numbers[index])
-    
-    dfs(0,0)
-    return answer
+    return dfs(0,0)

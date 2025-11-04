@@ -1,9 +1,7 @@
 def solution(nums):
-    answer = 0
     set_nums = set(nums)
-    poss = len(nums) // 2
-    if len(set_nums) < poss:
-        answer = len(set_nums)
+    
+    if len(set_nums) >= (len(nums) // 2):
+        return(len(nums) // 2)
     else:
-        answer = poss
-    return answer
+        return len(set_nums)
